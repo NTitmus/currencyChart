@@ -15,7 +15,7 @@ const App = () => {
             //const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', 
             //{params:{
             //    q: 'London',
-            //    appid: 'fbdd8dd9d153b6e26c603c16c60fa6c0',
+            //    appid: '',
             //    units: 'metric'
             //}})
             const response = await axios.get('https://www.alphavantage.co/query',
