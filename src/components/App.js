@@ -95,11 +95,11 @@ const App = () => {
             />
             </div>
             
-            <div className="ui segment">
+            
             <BarChart2 data={tempList}/>
             
             <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>
-            </div>
+            
         </div>
     );
 
