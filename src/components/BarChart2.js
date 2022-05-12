@@ -34,11 +34,11 @@ const BarChart2 = ({data}) => {
             .append("rect")
             .attr("width", 75)
             //.attr("height", (datapoint) => (datapoint.rate * scale-adjust))
-            .attr("height", (datapoint) => (Number(datapoint.rate) * (sca())-ad))
+            .attr("height", (datapoint) => (Number(datapoint.rate).toFixed(5) * (sca())-ad))
             .attr("fill", "orange")
             .attr("x", (a,iteratio)=> iteratio * 100 + 15)
             //.attr("y", (datapoint) => canvasHeight - (datapoint.rate * scale-adjust))
-            .attr("y", (datapoint) => canvasHeight - (Number(datapoint.rate) * (sca())-ad))
+            .attr("y", (datapoint) => canvasHeight - (Number(datapoint.rate).toFixed(5) * (sca())-ad))
 
 
         svgCanvas.selectAll(".valueLabel")
@@ -47,8 +47,8 @@ const BarChart2 = ({data}) => {
         .attr("class", "valueLabel")
         .attr("x", (datapoint, i)=> i * 100 + 15)
         //.attr("y", (datapoint, i) => canvasHeight-(datapoint.rate*scale-adjust)-10) 
-        .attr("y", (datapoint, i) => canvasHeight-(Number(datapoint.rate)*(sca())-ad)-10) 
-        .text(datapoint=>datapoint.rate)
+        .attr("y", (datapoint, i) => canvasHeight-(Number(datapoint.rate).toFixed(5)*(sca())-ad)-10) 
+        .text(datapoint=>Number(datapoint.rate).toFixed(5))
 
         const parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S")
 
@@ -57,7 +57,7 @@ const BarChart2 = ({data}) => {
         .append("text")
         .attr("class", "label")
         .attr("x", (datapoint, i)=> i * 100 + 15)
-        .attr("y", (datapoint, i)=> canvasHeight-(Number(datapoint.rate)*(sca())-ad)+15)
+        .attr("y", (datapoint, i)=> canvasHeight-(Number(datapoint.rate).toFixed(5)*(sca())-ad)+15)
         .text(datapoint=>parseDate(datapoint.datetime).toLocaleTimeString())
 
         svgCanvas
@@ -65,7 +65,7 @@ const BarChart2 = ({data}) => {
         .attr("class", "axesLabel")
         .attr("x", 5)
         .attr("y", canvasHeight-5)
-        .text(zeroLabel)
+        .text(zeroLabel.toFixed(5))
         
         
     }
@@ -85,7 +85,7 @@ const BarChart2 = ({data}) => {
     //)
 
     return(
-        <div ref={ref}>Boo2</div>
+        <div ref={ref}></div>
     );
 
     
