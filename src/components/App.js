@@ -74,18 +74,32 @@ const App = () => {
     //<button onClick={()=>onButtonClick()}>Get</button>
 
     return (
-        <div>
-            <div>
-            <h2>Currency Conversion from {fromCurrency} to {selectedCurr}</h2>
+        <div className="ui container">
+            <div className="ui segment">
+                <div className="ui header">
+                <h2>Currency Conversion from {fromCurrency} to {selectedCurr}</h2>
+                </div>
+                    <div>
+                    <p>The base currency is £ (GBP).  The button calls the <a href='https://www.alphavantage.co'>Alphavantage</a> API 
+                    to get the selected target currency.  The chart is an autoscaling bar chart made 
+                    using the D3 library.  The Y intercept value is NOT zero as in most bar charts, but 
+                    corresponds to the value shown on the bottom left corner of the chart (to enable 
+                    meaningful autoscaling).  
+                    </p>
+                    </div>
+            
+            <br/>
+            
             <Select options={toCurrOptions.map((i)=>({label:i.name, value: i.code}))}
             onChange={(s)=>{setSelectedCurr(s.value); setTempList([])}}
             />
             </div>
             
-            <br/>
+            <div className="ui segment">
             <BarChart2 data={tempList}/>
             
             <button onClick={()=>onButtonClick()}>Get</button>
+            </div>
         </div>
     );
 
