@@ -98,7 +98,7 @@ const App = () => {
             <div className="ui segment">
             <BarChart2 data={tempList}/>
             
-            <button onClick={()=>onButtonClick()}>Get</button>
+            <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>
             </div>
         </div>
     );
