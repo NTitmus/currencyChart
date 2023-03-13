@@ -84,7 +84,7 @@ const App = () => {
                     to get the selected target currency.  The chart is an autoscaling bar chart made 
                     using the D3 library.  The Y intercept value is NOT zero as in most bar charts, but 
                     corresponds to the value shown on the bottom left corner of the chart (to enable 
-                    meaningful autoscaling)...  
+                    meaningful autoscaling)...?  
                     </p>
                     </div>
             
