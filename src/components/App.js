@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios';
 import BarChart2 from './BarChart2'
+import LineChart from "./LineChart";
 
 import Select from 'react-select';
 
@@ -99,6 +100,8 @@ const App = () => {
             <BarChart2 data={tempList}/>
             
             <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>
+
+            <LineChart/>
             
         </div>
     );

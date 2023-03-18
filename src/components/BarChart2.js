@@ -27,6 +27,11 @@ const BarChart2 = ({data}) => {
         console.log('sca', sca())
         const ad = (min*sca()-40);
         const zeroLabel = (ad*min)/(40+ad)
+        //ad is adjustment.  The smallest rectangle is 40px high.  You subtract the adjustment from the scaled datapoint.
+        //height = (datapoint-min_datapoint_value) * scale + 40
+        //height = datapoint*scale - min_datapoint*scale + 40
+        //height = datapoint*scale - ad
+        //ad = (min_datapoint*scale - 40)
 
         const svgCanvas = d3.select(ref.current).append("svg").attr("width", 600).attr("height", 400).style("border","1px solid black")
         
