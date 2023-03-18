@@ -101,7 +101,7 @@ const App = () => {
             
             <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>
 
-            <LineChart data={tempList}/>
+            
             
         </div>
     );
