@@ -7,7 +7,7 @@ export const useD3 = (renderChartFn, dependencies) => {
     React.useEffect(()=>{
         renderChartFn(d3.select(ref.current));
         //return () => {};
-        return () => {console.log('callback');
+        return () => {console.log('callback remove');
             d3.select(ref.current).select("svg").remove()};
 
     }, dependencies);

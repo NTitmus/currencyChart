@@ -82,10 +82,8 @@ const App = () => {
                 </div>
                     <div>
                     <p>The base currency is £ (GBP).  The button calls the <a href='https://www.alphavantage.co'>Alphavantage</a> API 
-                    to get the selected target currency.  The chart is an autoscaling bar chart made 
-                    using the D3 library.  The Y intercept value is NOT zero as in most bar charts, but 
-                    corresponds to the value shown on the bottom left corner of the chart (to enable 
-                    meaningful autoscaling)...?  
+                    to get the selected target currency.  The chart is an autoscaling line chart made 
+                    using the D3 library.  Note: the Y intercept value is NOT zero.  
                     </p>
                     </div>
             
@@ -96,11 +94,16 @@ const App = () => {
             />
             </div>
             
+            <br/>
+            <LineChart data={tempList}/>
             
-            <BarChart2 data={tempList}/>
             
             <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>
-
+            
+            
+            
+            
+            
             
             
         </div>
