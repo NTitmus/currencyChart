@@ -13,7 +13,7 @@ const App = () => {
     const fromCurrency = 'GBP';
     const toCurrency = 'EUR';
     //{rate: 0.99, num: 0}
-    //{rate: 0.99, num: 0}, {rate: 0.9901, num: 1}, {rate: 0.99005, num: 2}
+    //{rate: 0.99, num: 0}, {rate: 0.9901, num: 1}, {rate: 0.99005, num: 2}  
 
     const toCurrOptions = [
         {code: 'SGD', name: 'Singapore Dollar'},
