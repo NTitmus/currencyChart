@@ -95,7 +95,7 @@ const App = () => {
             </div>
             
             <br/>
-            <LineChart data={tempList}/>
+            <LineChart data={tempList} selectC={selectedCurr}/>
             
             
             <button className="ui blue button" onClick={()=>onButtonClick()}>Get</button>

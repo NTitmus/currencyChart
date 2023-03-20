@@ -2,7 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import * as d3 from 'd3';
 import { useD3 } from './useD3';
 
-const LineChart = ({data}) => {
+const LineChart = ({data, selectC}) => {
     
     const [dataList, setDataList] = useState([])
 
@@ -10,7 +10,7 @@ const LineChart = ({data}) => {
     const drawBarChart = (da) =>{
 
 
-    const margin = {top: 10, right: 30, bottom: 30, left: 60};
+    const margin = {top: 10, right: 30, bottom: 50, left: 80};
     const width = 460 - margin.left - margin.right;
     const height = 400 - margin.top - margin.bottom;
     const parseDate = d3.timeParse("%Y-%m-%d %H:%M:%S")
@@ -81,6 +81,23 @@ const LineChart = ({data}) => {
          .style("fill", "none")
          .style("stroke", "#CC0000")
          .style("stroke-width", "2");
+
+        // X label
+        svgCanvas.append('text')
+        .attr('x', width/2)
+        .attr('y', height + 40)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text('Time');
+        
+        // Y label
+        svgCanvas.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(-60,' + height/2 + ')rotate(-90)')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text(selectC);
         
     }
 //return () => {d3.select(ref.current).remove()};
